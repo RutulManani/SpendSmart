@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpendSmart</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="Images/Logo.png" alt="SpendSmart Logo" class="logo">
+        </div>
+    </header>
+
+    <main>
+        <!-- Top Row - Challenge and Log Expense -->
+        <div class="top-row">
+            <section id="challenge" class="card">
+                <div class="section-header">
+                    <img src="Images/Challenge Icon.png" alt="Challenge Icon" class="section-icon">
+                    <h2>Today's Challenge</h2>
+                </div>
+                <div id="challenge-container">
+                    <p id="todays-challenge">Select a daily challenge from the dropdown, track your progress, and earn rewards! Gain 10 points for positive moods and lose 10 for negative ones—stay motivated to achieve your goals. The progress bar will become visible after your first entry.</p>
+                    <div id="active-challenge">
+                        <div class="challenge-controls">
+                            <div class="custom-dropdown">
+                                <select id="challenge-dropdown">
+                                    <option value="" disabled selected>Select Challenge</option>
+                                    <option value="spend-less">Spend Less Than $10 Today</option>
+                                    <option value="buy-less">Avoid Buying stuff more than $40 Today</option>
+                                    <option value="cook-meal">Cook a Meal Instead of Eating Out</option>
+                                    <option value="save-money">Save $20 by Skipping Takeout</option>
+                                    <option value="track-expenses">Track All Expenses for the Day</option>
+                                </select>
+                            </div>
+                            <button id="start-challenge" class="btn-primary">Start</button>
+                            <button id="end-challenge" class="btn-secondary hidden">End Challenge</button>
+                        </div>
+                        <div class="challenge-info">
+                            <p id="timer"><i class="fas fa-clock"></i> Time Remaining: <span id="time-remaining">00:00:00</span></p>
+                            <p><i class="fas fa-fire"></i> Streak: <span id="streak-count">0</span> days</p>
+                        </div>
+                    </div>
+                    <div id="completed-challenge" class="hidden">
+                        <p>You've completed your last challenge! Your <span id="current-streak">1-day</span> streak has begun—start a new challenge by tapping the button below.</p>
+                        <button id="reset-challenge" class="btn-primary">Reset</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="log-expense" class="card">
+                <div class="section-header">
+                    <img src="Images/Log Icon.png" alt="Expense Icon" class="section-icon">
+                    <h2>Log Your Expense</h2>
+                </div>
+                <form id="expense-form">
+                    <label for="amount">Amount Spent:</label>
+                    <input type="number" id="amount" name="amount" required>
+
+                    <label for="mood">Mood:</label>
+                    <div class="custom-dropdown">
+                        <select id="mood" name="mood" required>
+                            <option value="" disabled selected>Select Mood</option>
+                            <option value="happy">Happy</option>
+                            <option value="sad">Sad</option>
+                            <option value="stressed">Stressed</option>
+                            <option value="bored">Bored</option>
+                            <option value="excited">Excited</option>
+                            <option value="angry">Angry</option>
+                            <option value="relaxed">Relaxed</option>
+                        </select>
+                    </div>
+
+                    <label for="category">Category:</label>
+                    <div class="custom-dropdown">
+                        <select id="category" name="category" required>
+                            <option value="" disabled selected>Select Category</option>
+                            <option value="food">Food</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Log Expense</button>
+                </form>
+            </section>
+        </div>
+
+        <!-- Middle Row - Progress Section -->
+        <section id="progress-section" class="card full-width">
+            <div class="section-header">
+                <img src="Images/Your Progress.png" alt="Progress Icon" class="section-icon">
+                <h2>Your Progress</h2>
+            </div>
+            <div id="progress-content">
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress" id="progress"></div>
+                    </div>
+                    <p>Progress: <span id="progress-value">0</span>%</p>
+                </div>
+                <p id="progress-feedback" class="feedback"></p>
+            </div>
+            <div id="progress-complete" class="hidden">
+                <div class="badge-container">
+                    <img src="Images/Badge.png" alt="Golden Badge" class="badge-icon">
+                </div>
+                <p class="congrats-message">Congratulations User! You've completed the challenge and earned the golden badge! Keep the streak going for 3 days to unlock a reward.</p>
+            </div>
+            <div id="badge-collection">
+                <img src="Images/Badge.png" alt="Golden Badge" class="badge-icon">
+            </div>
+        </section>
+
+        <!-- Bottom Row - Spending History -->
+        <section id="spending-history" class="card full-width">
+            <div class="section-header">
+                <img src="Images/Spending Insights.png" alt="History Icon" class="section-icon">
+                <h2>Spending Insights</h2>
+            </div>
+            <button id="toggle-history" class="btn-secondary">View History</button>
+            <ul id="history-list" class="hidden">
+                <!-- Spending history items will be dynamically added here -->
+            </ul>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

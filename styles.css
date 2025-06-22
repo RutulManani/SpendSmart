@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #1E1E1E;
+    color: #E0E0E0;
+}
+
+/* Header Styles */
+header {
+    border-bottom: 1px solid #444;
+    padding: 20px;
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 200px;
+    height: 36px;
+}
+
+/* Main Content Layout */
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.top-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Card Styles */
+.card {
+    background: #2D2D2D;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    margin-bottom: 20px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+#challenge {
+    flex: 1;
+}
+
+#log-expense {
+    flex: 1;
+}
+
+/* Section Header Styles */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.section-icon {
+    width: 24px;
+    height: 24px;
+}
+
+h2 {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+/* Challenge Controls */
+.challenge-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+/* Dropdown Styles */
+.custom-dropdown {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.custom-dropdown::after {
+    content: "▼";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #4CAF50;
+    font-size: 0.8rem;
+}
+
+.custom-dropdown select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ffffff;
+    background: #3D3D3D;
+    color: #E0E0E0;
+    font-family: inherit;
+    appearance: none;
+    border-radius: 4px;
+}
+
+/* Form Elements */
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #A9A9A9;
+    font-size: 0.9rem;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ffffff;
+    background: #3D3D3D;
+    color: #E0E0E0;
+    font-family: inherit;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+/* Button Styles */
+.btn-primary {
+    background: #B7FF00;
+    color: #181818;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.btn-secondary {
+    color: #B7FF00;
+    border: 1px solid #B7FF00;
+    background: none;
+    border-width: 1px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Progress Bar Styles */
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #444;
+    border-radius: 10px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #4CAF50, #81C784);
+    transition: width 0.5s ease;
+}
+
+/* Timer and Streak Styles */
+#timer {
+    font-weight: bold;
+    color: #4CAF50;
+    margin: 15px 0;
+}
+
+/* Feedback Styles */
+.feedback {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* History List Styles */
+#history-list {
+    list-style-type: none;
+    margin-top: 15px;
+}
+
+#history-list li {
+    background: #3D3D3D;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Challenge Completion Styles */
+#completed-challenge {
+    text-align: center;
+    padding: 20px 0;
+}
+
+#progress-complete {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.badge-container {
+    margin: 20px auto;
+}
+
+.badge-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.congrats-message {
+    color: #4CAF50;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+#badge-collection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#badge-collection .badge-icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* Progress Container */
+.progress-container {
+    margin-bottom: 15px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .top-row {
+        flex-direction: column;
+    }
+    
+    main {
+        padding: 15px;
+    }
+    
+    .card {
+        margin-bottom: 15px;
+    }
+}
